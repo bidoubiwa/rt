@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   args_parsing.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:37:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 13:32:22 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/22 18:50:27 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 12:48:53 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-int			main(int argc, char **argv)
+t_args			*args_init(void)
 {
 	t_args		*args;
-	t_env		*env;
-	
-	(void)argv;
-	if (argc != 1)
-		launch_editor();
-	else 
-	{
-		args = args_parsing(argc, argv);
-		env = rt_init(args);
-		env->scene = parsing(args);
-	}
-	return (EXIT_SUCCESS);
+
+	args = (t_args*)ft_malloc(sizeof(t_args));
+	args->verbose_mode = NO_VERBOSE;
+	args->debug_mode = 0;
+	args->files = NULL;
+	return (args);
+}
+
+t_args			*args_parsing(int ac, char **av)
+{
+	t_args		*args;
+
+	args = args_init();
+	parse_arguments(ac, av, args);
+	if (args->verbose_mode == ARGS_PARSING || args->verbose_mode == ALL_VERBOSE)
+		verbose_args(args);
+	return (args);
 }

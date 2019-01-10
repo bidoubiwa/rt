@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/10 02:13:51 by toliver          ###   ########.fr        #
+#    Updated: 2019/01/10 14:00:02 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,70 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 				launch_editor \
 				) \
 			) \
+		$(addprefix args_parsing/, \
+			args_parsing \
+			parse_args \
+			usage \
+			big_flag \
+			small_flag \
+			parse_mode \
+			$(addprefix verbose/, \
+				verbose_args \
+				verbose_args_mode_bool \
+				verbose_args_mode_multi \
+				verbose_args_files \
+			) \
+		) \
+		$(addprefix init/, \
+			init \
+			$(addprefix verbose/, \
+			verbose_env \
+			)\
+		) \
+	$(addprefix parsing/, \
+		parsing \
+		$(addprefix json_parser/, \
+			array_recursive \
+			elem_struct_functions \
+			free_structure \
+			json_parser \
+			json_errors \
+			json_utils \
+			print_elem_architecture \
+			recognize_number \
+			recognize_string \
+			recognize_bool \
+			recognize_null \
+			recognize_array \
+			recognize_object \
+			object_recursive \
+			recognize_type \
+			recognize_key \
+			singleton \
+		) \
+		$(addprefix rt_parsing/, \
+			color_utils \
+			defaults \
+			init_object \
+			key_utils \
+			key_types_utils \
+			key_types_number \
+			malloc_structures \
+			parse_arithmetic_values \
+			parse_cameras \
+			parse_colors \
+			parse_light \
+			parse_object \
+			parse_objects \
+			parse_object_direction \
+			parse_object_direction_extension \
+			parse_scene \
+			parse_world_coord \
+			parse_vectors \
+			parsing \
+			required \
+		) \
+	) \
 		$(addprefix tools/, \
 			math_tools \
 			general_tools \
@@ -62,7 +126,13 @@ HEADERS = includes/rt.h \
 		  includes/rt_obj_structs.h \
 		  includes/rt_ray_structs.h \
 		  includes/rt_material_structs.h \
-		  includes/colors.h \
+		  includes/json_parser.h \
+		  includes/json_parser_errors.h \
+		  includes/libft_errors.h \
+		  includes/rt_errors.h \
+		  includes/editor.h \
+		  includes/editor_struct.h \
+		  includes/rt_required_information.h \
 
 all: $(NAME)
 
@@ -72,7 +142,7 @@ $(NAME): objs $(OBJS) $(HEADERS)
 	@make -C ./libs/libft
 	@make -C ./libs/libftg
 	@make -C ./libs/ft_printf
-	gcc -o $(NAME) $(FLAGS) $(LIBS) $(LIBG) $(LIBGFLAGS) $(OBJS) $(INCLUDES)
+	@gcc -o $(NAME) $(FLAGS) $(LIBS) $(LIBG) $(LIBGFLAGS) $(OBJS) $(INCLUDES)
 
 	
 objs/%.o: srcs/%.c
@@ -85,6 +155,11 @@ objs:
 	@mkdir objs/core/editor/settings
 	@mkdir objs/core/editor/running
 	@mkdir objs/core/editor/quit
+	@mkdir -p objs/args_parsing/verbose
+	@mkdir -p objs/init/verbose
+	@mkdir -p objs/parsing/verbose
+	@mkdir -p objs/parsing/rt_parsing
+	@mkdir -p objs/parsing/json_parser
 	@mkdir -p objs/tools/colors_handling
 
 clean:

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 12:47:16 by cvermand         ###   ########.fr       */
+/*   Created: 2018/10/21 16:37:52 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 13:27:28 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "rt.h"
 
-#include "rt_obj_structs.h"
-# include "args_parsing.h"
+// TODO rajouter win
 
-typedef struct		s_scene
+t_env				*rt_env_init(t_args *args)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	t_env			*env;
 
-typedef struct		s_env
+	(void)args;
+	env = (t_env*)ft_malloc(sizeof(t_env));
+	env->scene = NULL;
+	return (env);
+}
+
+t_env				*rt_init(t_args *args)
 {
-	t_scene			*scene;
-	t_args			*args;
-}					t_env;
+	t_env			*env;
 
-#endif
+	env = rt_env_init(args);
+	if (args->verbose_mode == INIT || args->verbose_mode == ALL_VERBOSE)
+		verbose_env(env);
+	return (env);
+}

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   recognize_null.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cvermand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:37:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 13:32:22 by cvermand         ###   ########.fr       */
+/*   Created: 2018/11/22 21:56:22 by cvermand          #+#    #+#             */
+/*   Updated: 2019/01/03 18:49:24 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "json_parser.h"
 
-int			main(int argc, char **argv)
+int		json_recognize_null(t_elem *current, char *line, int *i)
 {
-	t_args		*args;
-	t_env		*env;
-	
-	(void)argv;
-	if (argc != 1)
-		launch_editor();
-	else 
+	if (ft_strncmp(&line[*i], "null", 4) == 0)
 	{
-		args = args_parsing(argc, argv);
-		env = rt_init(args);
-		env->scene = parsing(args);
+		*i = *i + 4;
+		current->type = NULL_ELEM;
+		current->value.nully = 0;
+		return (1);
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }

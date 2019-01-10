@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   verbose_args_mode_bool.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 12:47:16 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/24 03:24:51 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 12:07:30 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "rt.h"
 
-#include "rt_obj_structs.h"
-# include "args_parsing.h"
-
-typedef struct		s_scene
+void			print_debug_mode(int mode)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	char		*value;
 
-typedef struct		s_env
-{
-	t_scene			*scene;
-	t_args			*args;
-}					t_env;
-
-#endif
+	value = (mode == 1 ? "ON" : "OFF");
+	ft_printf("	Debug mode is %s\n", value);
+}

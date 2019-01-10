@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   verbose_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 12:47:16 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/24 02:33:25 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 12:07:07 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "rt.h"
 
-#include "rt_obj_structs.h"
-# include "args_parsing.h"
-
-typedef struct		s_scene
+void			verbose_args(t_args *args)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
-
-typedef struct		s_env
-{
-	t_scene			*scene;
-	t_args			*args;
-}					t_env;
-
-#endif
+	ft_printf("\n/!\\ == Verbose for args == /!\\\n\n");
+	print_args_files(args->files);
+	print_verbose_mode(args->verbose_mode);
+	print_debug_mode(args->debug_mode);
+	ft_printf("===== end of args verbose =====\n\n");
+}

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   key_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cvermand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:37:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 13:32:22 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/10 17:21:48 by cvermand          #+#    #+#             */
+/*   Updated: 2019/01/10 14:03:36 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-int			main(int argc, char **argv)
+t_elem		*find_elem_by_key(t_elem *elem, char *key)
 {
-	t_args		*args;
-	t_env		*env;
-	
-	(void)argv;
-	if (argc != 1)
-		launch_editor();
-	else 
+	t_elem		*curr;
+
+	curr = elem;
+	while (curr)
 	{
-		args = args_parsing(argc, argv);
-		env = rt_init(args);
-		env->scene = parsing(args);
+		if (curr->key != NULL && !ft_strcmp(curr->key, key))
+		{
+			check_type_of_key(key, curr->type);
+			return (curr);
+		}
+		curr = curr->next;
 	}
-	return (EXIT_SUCCESS);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 01:44:42 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 03:16:59 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/10 11:54:45 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ typedef enum			e_button_state
 	IDLE,
 	HOVER,
 	CLICKED,
-}						t_button_state
+}						t_button_state;
 
 typedef struct			s_button
 {
@@ -48,7 +48,7 @@ typedef struct			s_assets
 {
 	SDL_Surface			*icons;
 	int					icons_number;
-	SDL_Surface			
+	SDL_Surface			prout;
 }						t_assets;
 
 typedef struct			s_enve

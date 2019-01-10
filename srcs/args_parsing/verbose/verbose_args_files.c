@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   verbose_args_files.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 12:47:16 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/24 03:27:46 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 12:07:19 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "rt.h"
 
-#include "rt_obj_structs.h"
-# include "args_parsing.h"
-
-typedef struct		s_scene
+void			print_args_files(char **files)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	int			i;
 
-typedef struct		s_env
-{
-	t_scene			*scene;
-	t_args			*args;
-}					t_env;
-
-#endif
+	i = 0;
+	if (files == NULL || files[0] == NULL)
+		ft_printf("	There are no files\n");
+	else
+	{
+		ft_printf("	Files in argument are :\n");
+		while (files[i])
+		{
+			ft_printf("		- %s\n", files[i]);
+			i++;
+		}
+	}
+	ft_printf("\n");
+}

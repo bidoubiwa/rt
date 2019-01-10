@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   small_flag.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 12:47:16 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/23 00:06:58 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 12:48:36 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "rt.h"
 
-#include "rt_obj_structs.h"
-# include "args_parsing.h"
-
-typedef struct		s_scene
+void			parse_smallflag(char *flagvalue, t_args *args)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	int			i;
 
-typedef struct		s_env
-{
-	t_scene			*scene;
-	t_args			*args;
-}					t_env;
-
-#endif
+	i = 0;
+	while (flagvalue[i])
+	{
+		if (ft_strchr(SHORT_FLAGS, flagvalue[i]) == NULL)
+			print_usage();
+		else
+		{
+			if (flagvalue[i] == 'd')
+				args->debug_mode = 1;
+		}
+		i++;
+	}
+}

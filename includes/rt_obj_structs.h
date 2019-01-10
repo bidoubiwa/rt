@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:58:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 02:22:43 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/10 14:40:35 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,25 +127,24 @@ typedef struct		s_light
 	float			size;				// utile que pour point, mais a voir
 }					t_light;
 
-typedef union		u_params
+typedef union		u_obj_params
 {
 	t_shape			shape;
 	t_cam			cam;
 	t_light			light;
-}					t_params;
-
+}					t_obj_params;
+// TODO faire free le maillon du get next line une fois qu'on a fini de lire la derniere ligne dun fichier
 typedef struct		s_obj
 {
 	t_vec			pos;
 	t_vec			lookat;
 	t_vec			dir;
 	t_vec			up;
-	t_vec			right;
-	
+	t_vec			right;	
 	t_matrix		world_to_obj;
 	t_matrix		obj_to_world;
 	t_obj_type		type;
-	t_params		params;
+	t_obj_params	params;
 	struct s_obj	*next;
 }					t_obj;
 
