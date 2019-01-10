@@ -6,14 +6,16 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:37:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/09 19:38:01 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/10 02:08:09 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-int			main(void)
+int			main(int argc, char **argv)
 {
-	ft_printf("lol\n");
+	(void)argv;
+	if (argc != 1)
+		launch_editor();
 	return (EXIT_SUCCESS);
 }

@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   quit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 01:50:27 by toliver          ###   ########.fr       */
+/*   Created: 2019/01/10 02:17:20 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 02:45:13 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "editor.h"
 
-#include "rt_obj_structs.h"
-
-typedef struct		s_scene
+void		free_env(t_enve *env)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	free(env);
+}
 
-typedef struct		s_env
+void		delete_window(t_enve *env)
 {
-	t_scene			*scene;
-}					t_env;
+	SDL_DestroyRenderer(env->window.renderer);
+	SDL_DestroyWindow(env->window.win);
+}
 
-#endif
+void		quit_libs(t_enve *env)
+{
+	(void)env;
+	SDL_Quit();
+}
+
+void		quit(t_enve *env)
+{
+	delete_window(env);
+	quit_libs(env);
+	free_env(env);
+}

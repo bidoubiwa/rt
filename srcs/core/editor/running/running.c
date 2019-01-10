@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   running.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 01:50:27 by toliver          ###   ########.fr       */
+/*   Created: 2019/01/10 02:17:49 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 02:18:05 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "editor.h"
 
-#include "rt_obj_structs.h"
-
-typedef struct		s_scene
+void		running(t_enve *env)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	(void)env;
+	int running = 1;
+	SDL_Event event;
 
-typedef struct		s_env
-{
-	t_scene			*scene;
-}					t_env;
-
-#endif
+	while (running)
+		while(SDL_PollEvent(&event))
+			if((SDL_QUIT == event.type) || (SDL_KEYDOWN == event.type && SDL_SCANCODE_ESCAPE == event.key.keysym.scancode))
+				running = 0;
+}

@@ -6,13 +6,14 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:58:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/09 21:12:55 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/10 02:22:43 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_OBJ_STRUCTS_H
 # define RT_OBJ_STRUCTS_H
 
+#include "libftg.h"
 #include "rt_ray_structs.h"
 #include "rt_material_structs.h"
 

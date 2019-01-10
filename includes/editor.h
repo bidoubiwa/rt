@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   editor.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 01:50:27 by toliver          ###   ########.fr       */
+/*   Created: 2019/01/10 01:40:19 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 02:29:19 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#ifndef EDITOR_H
+# define EDITOR_H
 
-#include "rt_obj_structs.h"
+# include "SDL.h"
+# include "libft.h"
+# include "libftg.h"
+# include "colors.h"
+# include "libftprintf.h"
+# include "rt.h"
+# include "editor_struct.h"
 
-typedef struct		s_scene
-{
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
-
-typedef struct		s_env
-{
-	t_scene			*scene;
-}					t_env;
+int					editor(void);
+t_enve				*init(void);
+void				settings(t_enve *env);
+void				running(t_enve *env);
+void				quit(t_enve *env);
 
 #endif

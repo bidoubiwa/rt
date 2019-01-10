@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 21:52:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/09 20:08:34 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/10 01:59:55 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include "rt_structs.h"
 # include "colors.h"
 
-# define WIN_WIDTH 1280
-# define WIN_HEIGHT 768
 # define TOLERANCE 0.01
+
+void				launch_editor(void);
 
 /*
 ** BASIC UTILS FUNCTIONS

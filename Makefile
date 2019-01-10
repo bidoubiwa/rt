@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/09 20:20:49 by toliver          ###   ########.fr        #
+#    Updated: 2019/01/10 02:13:51 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,32 @@ LIBS = ./libs/libft/libft.a \
 	   ./libs/libftg/libftg.a \
 	   ./libs/ft_printf/libftprintf.a \
 
-INCLUDES = -I includes/ -I ./libs/libft/includes/ -I ./libs/libftg/includes/ -I ./libs/ft_printf/includes/
+INCLUDES = -I includes/ -I ./libs/libft/includes/ -I ./libs/libftg/includes/ -I ./libs/ft_printf/includes/ -I ./SDL2.framework/Versions/A/Headers/
+
+LIBG = ./SDL2.framework/Versions/A/SDL2 
+
+LIBGFLAGS = -F ./ -framework SDL2
 
 FLAGS = -Wall -Wextra -Werror -Ofast
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 		$(addprefix core/, \
 			main \
+			$(addprefix editor/, \
+				$(addprefix init/, \
+					init \
+					) \
+				$(addprefix settings/, \
+					settings \
+					) \
+				$(addprefix running/, \
+					running \
+					) \
+				$(addprefix quit/, \
+					quit \
+					) \
+				launch_editor \
+				) \
 			) \
 		$(addprefix tools/, \
 			math_tools \
@@ -47,13 +66,13 @@ HEADERS = includes/rt.h \
 
 all: $(NAME)
 
-$(NAME): objs $(OBJS) $(HEADERS)
+$(NAME): objs $(OBJS) $(HEADERS) 
 
 	@printf "\033[92m\033[1:32mCompiling -------------> \033[91m$(NAME)\033[0m:\033[0m%-16s\033[32m[✔]\033[0m\n"
 	@make -C ./libs/libft
 	@make -C ./libs/libftg
 	@make -C ./libs/ft_printf
-	@gcc -o $(NAME) $(FLAGS) $(LIBS) $(OBJS) $(INCLUDES)
+	gcc -o $(NAME) $(FLAGS) $(LIBS) $(LIBG) $(LIBGFLAGS) $(OBJS) $(INCLUDES)
 
 	
 objs/%.o: srcs/%.c
@@ -62,7 +81,10 @@ objs/%.o: srcs/%.c
 	@printf "\033[A\033[2K"
 
 objs:
-	@mkdir -p objs/core
+	@mkdir -p objs/core/editor/init
+	@mkdir objs/core/editor/settings
+	@mkdir objs/core/editor/running
+	@mkdir objs/core/editor/quit
 	@mkdir -p objs/tools/colors_handling
 
 clean:

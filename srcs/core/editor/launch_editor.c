@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   launch_editor.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 01:50:27 by toliver          ###   ########.fr       */
+/*   Created: 2019/01/10 01:36:55 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 02:23:37 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "editor.h"
 
-#include "rt_obj_structs.h"
-
-typedef struct		s_scene
+int		editor(void)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
+	t_enve	*env;
 
-typedef struct		s_env
+	env = init();
+	settings(env);
+	running(env);
+	quit(env);
+	return (EXIT_SUCCESS);
+}
+
+void		launch_editor(void)
 {
-	t_scene			*scene;
-}					t_env;
+	editor();
+}
 
-#endif
+

@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt_structs.h                                       :+:      :+:    :+:   */
+/*   settings.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 01:50:27 by toliver          ###   ########.fr       */
+/*   Created: 2019/01/10 02:18:13 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/10 02:23:57 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_STRUCTS_H
-# define RT_STRUCTS_H
+#include "editor.h"
 
-#include "rt_obj_structs.h"
-
-typedef struct		s_scene
+void			settings(t_enve *env)
 {
-	char			*name;
-	t_obj			*objs;
-	t_obj			*lights;
-	t_obj			*cameras;
-	struct s_scene	*next;
-}					t_scene;
-
-typedef struct		s_env
-{
-	t_scene			*scene;
-}					t_env;
-
-#endif
+	(void)env;
+}
