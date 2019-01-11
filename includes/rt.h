@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 21:52:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 14:21:48 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/11 19:14:37 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ void				print_object_common(t_obj *obj);
 void				print_object_spec(t_obj *obj);
 void				print_lights(t_obj *lights);
 void				print_cameras(t_obj *cameras);
+void				print_color(t_rgb color, char *name);
+void				print_matrix(t_matrix m);
+void				print_vec(t_vec v);
 /*
 ** RT PARSING FROM JSON
 */
@@ -119,10 +122,37 @@ t_vec				get_right_dir(t_vec dir);
 t_vec				get_up_dir(t_vec dir, t_vec right);
 t_vec				vec_rot_zaxis_angle(t_vec v, t_vec zaxis, float angle);
 /*
+** PARSING : Initialization of math values
+*/
+t_matrix			world_to_obj_matrix(t_obj *obj);
+t_matrix			obj_to_world_matrix(t_obj *obj);
+
+
+/*
 ** PARSING ERRORS
 */
 void				wrong_format(char *form, t_json_data type);
 void				is_required(char *key, int one);
+
+/*
+** SETTINGS FUNCTIONS
+*/
+
+t_ray				ray_init_lookat(t_vec pos, t_vec lookat);
+t_ray				ray_init(t_vec pos, t_vec dir);
+t_ray				ray_to_obj(t_ray ray, t_obj *obj);
+t_ray				ray_to_world(t_ray ray, t_obj *obj);
+
+t_ray				get_actual_ray(t_renderer *renderer, t_obj *cam, int x,
+						int y);
+t_ray				*renderer_malloc(t_renderer *renderer, t_obj *cam);
+t_renderer			*renderer_init(t_obj *cam, t_args *arg, t_env *env);
+void				renderers_settings(t_args *args, t_env *env);
+void				settings_settings(t_args *args, t_env *env);
+
+void				verbose_settings(t_args *args, t_env *env);
+void				print_renderers(t_scene *scene);
+void				print_renderer(t_renderer *renderer);
 
 /*
 ** RUNNING FUNCTIONS

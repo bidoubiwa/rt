@@ -6,11 +6,11 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 04:03:42 by toliver           #+#    #+#             */
-/*   Updated: 2018/12/24 06:21:00 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/11 15:05:36 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rtv1.h"
+#include "rt.h"
 
 void			verbose_parsing(t_scene *scene)
 {

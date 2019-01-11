@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/10 14:00:02 by cvermand         ###   ########.fr        #
+#    Updated: 2019/01/11 19:17:22 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ FLAGS = -Wall -Wextra -Werror -Ofast
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 		$(addprefix core/, \
 			main \
+			errors \
 			$(addprefix editor/, \
 				$(addprefix init/, \
 					init \
@@ -106,6 +107,20 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 			parsing \
 			required \
 		) \
+		$(addprefix verbose/, \
+			verbose_arithmetic_values \
+			verbose_parsing \
+			verbose_parsing_loops \
+			verbose_parsing_printing \
+		) \
+	) \
+	$(addprefix settings/, \
+		settings \
+		ray \
+		renderer_init \
+		$(addprefix verbose/, \
+			verbose_settings \
+		) \
 	) \
 		$(addprefix tools/, \
 			math_tools \
@@ -155,6 +170,7 @@ objs:
 	@mkdir objs/core/editor/settings
 	@mkdir objs/core/editor/running
 	@mkdir objs/core/editor/quit
+	@mkdir -p objs/settings/verbose
 	@mkdir -p objs/args_parsing/verbose
 	@mkdir -p objs/init/verbose
 	@mkdir -p objs/parsing/verbose

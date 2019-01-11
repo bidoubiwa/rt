@@ -6,14 +6,17 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 05:58:45 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/04 01:55:38 by toliver          ###   ########.fr       */
+/*   Updated: 2019/01/11 16:07:00 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rtv1.h"
+#include "rt.h"
 
 void				print_object_common(t_obj *obj)
 {
+	t_material_type		material_type;
+	t_material_light	material_light;
+
 	ft_printf("\t\t%-10s : ", "pos");
 	print_vec(obj->pos);
 	ft_printf("\t\t%-10s : ", "right");
@@ -22,12 +25,24 @@ void				print_object_common(t_obj *obj)
 	print_vec(obj->up);
 	ft_printf("\t\t%-10s : ", "dir");
 	print_vec(obj->dir);
-	print_color(obj->color, "color");
-	ft_printf("\t\t%-10s : %f\n", "brillance", obj->brillance);
-	ft_printf("\t\t%-10s : %f\n", "specular", obj->specular);
-	ft_printf("\t\t%-10s : %f\n", "diffuse", obj->diffuse);
-	ft_printf("\t\t%-10s : %f\n", "ambiant", obj->ambiant);
-	ft_printf("\t\t%-10s : %f\n", "roll", obj->roll);
+	if (obj->type != LIGHT && obj->type != LIGHT)
+	{
+		material_type = obj->params.shape.material.type;
+		if (material_type == PLAIN)
+			print_color(obj->params.shape.material.params.plain.color, "color");
+		if (material_type == PLAIN || material_type == TEXTURE)
+		{
+			if (material_type == PLAIN)
+				material_light = obj->params.shape.material.params.plain.light;	
+			else if (material_type == TEXTURE)
+				material_light = obj->params.shape.material.params.texture.light;
+			ft_printf("\t\t%-10s : %f\n", "brillance", material_light.brillance);
+			ft_printf("\t\t%-10s : %f\n", "specular", material_light.specular);
+			ft_printf("\t\t%-10s : %f\n", "diffuse", material_light.diffuse);
+			//ft_printf("\t\t%-10s : %f\n", "ambiant", material_light.ambiant);
+			//ft_printf("\t\t%-10s : %f\n", "roll", material_light.roll);
+		}
+	}
 	ft_printf("\t\t%-10s : \n", "world to obj");
 	print_matrix(obj->world_to_obj);
 	ft_printf("\t\t%-10s : \n", "obj to world ");
@@ -37,15 +52,15 @@ void				print_object_common(t_obj *obj)
 void				print_object_specs(t_obj *obj)
 {
 	if (obj->type == CONE)
-		ft_printf("\t\t%-10s : %f\n", "angle", obj->params.cone.angle);
+		ft_printf("\t\t%-10s : %f\n", "angle", obj->params.shape.params.cone.angle);
 	else if (obj->type == CYLINDER)
-		ft_printf("\t\t%-10s : %f\n", "radius", obj->params.cylinder.radius);
+		ft_printf("\t\t%-10s : %f\n", "radius", obj->params.shape.params.cylinder.radius);
 	else if (obj->type == SPHERE)
-		ft_printf("\t\t%-10s : %f\n", "radius", obj->params.sphere.radius);
+		ft_printf("\t\t%-10s : %f\n", "radius", obj->params.shape.params.sphere.radius);
 	else if (obj->type == LIGHT)
 		ft_printf("\t\t%-10s : %f\n", "intensity", obj->params.light.intensity);
 	else if (obj->type == CAMERA)
-		ft_printf("\t\t%-10s : %f\n", "fov", obj->params.camera.fov);
+		ft_printf("\t\t%-10s : %f\n", "fov", obj->params.cam.fov);
 }
 
 void				print_object(t_obj *obj)

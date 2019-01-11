@@ -6,7 +6,7 @@
 /*   By: cvermand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 19:37:59 by cvermand          #+#    #+#             */
-/*   Updated: 2019/01/10 14:03:36 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/11 14:53:02 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void					parse_up_right_vec(t_elem *elem, t_obj *obj)
 {
-	obj->roll = default_float(required_float(parse_degree_to_rad(
+	float roll;
+
+	roll = default_float(required_float(parse_degree_to_rad(
 					parse_float(find_elem_by_key(elem, "roll"))),
 				ROLL_REQUIRED, "Roll"), 0.0);
 	obj->right = get_right_dir(obj->dir);
-	obj->right = vec_rot_zaxis_angle(obj->right, obj->dir, obj->roll);
+	obj->right = vec_rot_zaxis_angle(obj->right, obj->dir, roll);
 	obj->up = get_up_dir(obj->dir, obj->right);
 }
 

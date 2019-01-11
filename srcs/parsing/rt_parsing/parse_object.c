@@ -6,7 +6,7 @@
 /*   By: cvermand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 16:42:52 by cvermand          #+#    #+#             */
-/*   Updated: 2019/01/10 15:48:39 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/11 14:51:44 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,30 @@ static void		parse_rotation_translation(t_elem *elem, t_obj *obj)
 static void		parse_color_information(t_elem *child_elem, t_obj *obj)
 {
 	t_plain				plain;
-	e_material_type		material_type;
+	t_material_type		material_type;
+	t_material_light	material_light;
 
 	material_type = obj->params.shape.material.type;
 	if (material_type == PLAIN)
 	{
 		plain = obj->params.shape.material.params.plain;	
-		plain->color = parse_color(find_elem_by_key(child_elem, "color"), COLOR_REQ);
+		plain.color = parse_color(find_elem_by_key(child_elem, "color"), COLOR_REQ);
 	}
 	if (material_type == PLAIN || material_type == TEXTURE)
 	{
 		if (material_type == PLAIN)
-			material_light = obj->params.shape->material.params.plain.light;	
+			material_light = obj->params.shape.material.params.plain.light;	
 		else if (material_type == TEXTURE)
-			obj->params.shape->material.params.texture.light;
+			material_light = obj->params.shape.material.params.texture.light;
 		material_light.specular = default_float(required_float(
 					parse_float(find_elem_by_key(child_elem, "specular")),
 					SPECULAR_REQ, "Specular"), 1.0);
 		material_light.diffuse = default_float(required_float(
 					parse_float(find_elem_by_key(child_elem, "diffuse")),
 					DIFFUSE_REQ, "Diffuse"), 1.0);
-		material_light.ambiant = default_float(required_float(
+	/*	material_light.ambiant = default_float(required_float(
 					parse_float(find_elem_by_key(child_elem, "ambiant")),
-					AMBIANT_REQ, "Ambiant"), 0.0);
+					AMBIANT_REQ, "Ambiant"), 0.0);*/
 		material_light.brillance = default_float(required_float(
 					parse_float(find_elem_by_key(child_elem, "brillance")),
 					BRILLANCE_REQ, "Brillance"), 1.0);
@@ -75,8 +76,8 @@ static void		parse_color_information(t_elem *child_elem, t_obj *obj)
 			ft_error(SPECULAR_BAD_FORMAT);
 		if (material_light.diffuse < 0.0 || material_light.diffuse > 1.0)
 			ft_error(DIFFUSE_BAD_FORMAT);
-		if (material_light.ambiant < 0.0 || material_light.ambiant > 1.0)
-			ft_error(AMBIANT_BAD_FORMAT);
+		/*if (material_light.ambiant < 0.0 || material_light.ambiant > 1.0)
+			ft_error(AMBIANT_BAD_FORMAT);*/
 	}
 }
 
@@ -91,7 +92,8 @@ t_obj			*parse_one_object(t_elem *elem,
 	parse_dir_lookat_pos(child_elem, obj);
 	parse_up_right_vec(child_elem, obj);
 	parse_obj(child_elem, obj);
-	//parse_color_information(child_elem, obj);
+	if (obj->type != LIGHT && obj->type != LIGHT)
+		parse_color_information(child_elem, obj);
 	parse_rotation_translation(child_elem, obj);
 	return (obj);
 }

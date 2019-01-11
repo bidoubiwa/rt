@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:58:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 14:40:35 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/11 16:16:56 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ typedef struct		s_shape
 {
 	t_shape_type	type;
 //	t_rgb			color;
-	t_material		*material;
+	t_material		material;
 	float			specular; // voir si toutes ces valeurs sont pas liees au material
 	float			diffuse;
 	float			brillance;
@@ -111,7 +111,7 @@ typedef struct		s_shape
 	float			alpha;
 	void			(*intersect)(t_ray*, struct s_obj*);
 	t_shape_params	params;
-}					t_shape;
+}				t_shape;
 
 typedef struct		s_cam
 {
