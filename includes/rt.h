@@ -6,13 +6,14 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 21:52:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 19:14:37 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/12 15:08:52 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RTV1_H
 # define RTV1_H
 
+# include "SDL.h"
 # include "libft.h"
 # include "libftg.h"
 # include "libftprintf.h"
@@ -24,7 +25,6 @@
 # include "rt_errors.h"
 # include "libft_errors.h"
 # include "args_parsing.h"
-
 # define TOLERANCE 0.01
 
 void				launch_editor(void);

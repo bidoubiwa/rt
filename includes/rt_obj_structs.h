@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:58:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 16:16:56 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/12 15:08:09 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "libftg.h"
 #include "rt_ray_structs.h"
 #include "rt_material_structs.h"
+#include "editor_struct.h"
 
 typedef struct		s_sphere
 {
@@ -42,8 +43,6 @@ typedef struct		s_renderer
 	int				width;
 	int				height;
 	int				depth;
-	int				renderer_mode;
-	int				print_mode;
 	t_vec			top_left_vec;
 	t_vec			increment;
 	struct s_ray	*renderer;

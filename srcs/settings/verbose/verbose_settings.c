@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 06:28:48 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 19:27:19 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/12 15:11:39 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ void				print_renderer(t_renderer *renderer)
 			renderer->width, renderer->height);
 	ft_printf("\t\trenderer depth = %d (not used at the moment, for AA later\n",
 			renderer->depth);
-	ft_printf("\t");
-	print_renderer_mode(renderer->renderer_mode);
-	ft_printf("\t");
-	print_print_mode(renderer->print_mode);
 	ft_printf("\t\ttop left vec for the renderer is : ");
 	print_vec(renderer->top_left_vec);
 	ft_printf("\t\tincrement vec for the renderer is : ");
@@ -41,7 +37,7 @@ void				print_renderers(t_scene *scene)
 		cameras = scenes->cameras;
 		while (cameras)
 		{
-			print_renderer(cameras->params.camera.renderer);
+			print_renderer(cameras->params.cam.renderer);
 			cameras = cameras->next;
 		}
 		scenes = scenes->next;
@@ -51,10 +47,9 @@ void				print_renderers(t_scene *scene)
 
 void				verbose_settings(t_args *args, t_env *env)
 {
+	(void)args;
 	ft_printf("/!\\ == Verbose for settings === /!\\\n\n");
-	if (args->renderer_mode == NO_RENDERER)
-		ft_printf("\tNO_RENDERER mode set, nothing done\n");
-	else if (!env->scene)
+	if (!env->scene)
 		ft_printf("\tNo scenes were allocated !!!\n");
 	else
 		print_renderers(env->scene);

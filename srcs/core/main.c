@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:37:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/10 13:32:22 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/12 15:12:30 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int			main(int argc, char **argv)
 	t_env		*env;
 	
 	(void)argv;
-	if (argc != 1)
+	if (argc == 1)
 		launch_editor();
 	else 
 	{
