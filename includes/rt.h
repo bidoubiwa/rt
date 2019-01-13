@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 21:52:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/12 15:08:52 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:02:38 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "rt_errors.h"
 # include "libft_errors.h"
 # include "args_parsing.h"
+# include "keys.h"
 # define TOLERANCE 0.01
 
 void				launch_editor(void);
@@ -157,9 +158,10 @@ void				print_renderer(t_renderer *renderer);
 /*
 ** RUNNING FUNCTIONS
 */
-
+void				running_rt(t_args *args, t_scene *scenes);
 t_ray				reflect_ray(t_ray *ray);
 t_vec				reflect_vec(t_vec vec, t_vec axis);
+
 /*
 ** PRIMITIVES FUNCTIONS
 */
@@ -178,4 +180,43 @@ void				cone_intersection(t_ray *ray, t_obj *cone);
 int					quadratic(float a, float b, float c, float l[2]);
 void				check_for_closest(float length, t_ray *ray, t_obj *obj);
 void				get_normal(t_ray *ray);
+
+
+/*
+**	RAYTRACING FUNCTIONS
+*/
+
+void				malloc_raytracing(t_scene *scene, t_renderer *renderer,
+						t_obj *camera);
+void				stack_raytracing(t_scene *scene, t_renderer *renderer,
+						t_obj *camera);
+void				raytracing(t_scene *scene, t_obj *camera);
+t_ray				reflect_ray(t_ray *ray);
+t_vec				reflect_vector(t_vec vec, t_vec axis);
+void				shoot_ray_lights(t_scene *scene, t_ray *ray, t_obj *cam);
+void				shoot_ray(t_scene *scene, t_ray *ray);
+/*
+** COLOR AND LIGHT
+*/
+t_rgb				get_specular(t_ray *ray, t_ray to_light, t_obj *light,
+						t_obj *cam);
+t_rgb				get_diffuse(t_ray *ray, t_ray to_light, t_obj *light);
+t_rgb				get_ambiant(t_ray *ray, t_scene *scene);
+/*
+** RAYTRACING PRINT FUNCTIONS
+*/
+void				verbose_running(t_args *args, t_scene *scenes);
+void				print_color(t_rgb color, char *name);
+void				print_matrix(t_matrix m);
+void				print_vec(t_vec v);
+
+/*
+** LOOP FUNCTIONS
+*/
+
+int					key_pressed(int key, t_env *env);
+void				loop(t_args *args, t_env *env);
+void				free_env_rt(t_env *env);
+
+void				verbose_loop(t_args *args, t_env *env);
 #endif

@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/11 19:17:22 by cvermand         ###   ########.fr        #
+#    Updated: 2019/01/13 21:01:02 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,17 +122,63 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 			verbose_settings \
 		) \
 	) \
-		$(addprefix tools/, \
-			math_tools \
-			general_tools \
-			vector \
-			$(addprefix colors_handling/, \
-				colors_init \
-				rgb_functions \
-				) \
+	$(addprefix tools/, \
+		math_tools \
+		general_tools \
+		vector \
+		$(addprefix colors_handling/, \
+			colors_init \
+			rgb_functions \
 			) \
-		\
-		)) 
+		) \
+	$(addprefix running/, \
+		running \
+		$(addprefix raytracing/, \
+			raytracing \
+			$(addprefix primitives/, \
+				$(addprefix cone/, \
+					intersect \
+					normal \
+				) \
+				$(addprefix cylinder/, \
+					intersect \
+					normal \
+				) \
+				$(addprefix plane/, \
+					intersect \
+					normal \
+				) \
+				$(addprefix sphere/, \
+					intersect \
+					normal \
+				) \
+				common \
+			) \
+			$(addprefix stack/, \
+				stack_raytracing \
+			) \
+			$(addprefix malloc/, \
+				malloc_raytracing \
+			) \
+			$(addprefix common/, \
+				ray_shooting \
+				ray_light_shooting \
+				reflect \
+			) \
+		) \
+		$(addprefix verbose/, \
+			verbose_running \
+		) \
+	) \
+	$(addprefix loop/, \
+		loop \
+		free_env \
+		$(addprefix verbose/, \
+			verbose_loop \
+		) \
+	) \
+	\
+)) 
 
 
 HEADERS = includes/rt.h \
@@ -177,6 +223,15 @@ objs:
 	@mkdir -p objs/parsing/rt_parsing
 	@mkdir -p objs/parsing/json_parser
 	@mkdir -p objs/tools/colors_handling
+	@mkdir -p objs/running/verbose
+	@mkdir -p objs/running/raytracing/malloc
+	@mkdir objs/running/raytracing/stack
+	@mkdir -p objs/running/raytracing/primitives/cone
+	@mkdir objs/running/raytracing/primitives/cylinder
+	@mkdir objs/running/raytracing/primitives/plane
+	@mkdir objs/running/raytracing/primitives/sphere
+	@mkdir objs/running/raytracing/common
+	@mkdir -p objs/loop/verbose
 
 clean:
 #	@	make -C ./libs/libft clean
