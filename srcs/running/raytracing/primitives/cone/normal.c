@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 02:44:37 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 19:24:51 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 18:49:51 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static t_vec		get_hypotenuse(t_ray *ray, t_vec real_axis)
 	float			hypotenuse_len;
 	t_matrix		matrix;
 
+//	ft_printf(" KFEJWELFKJ : %f\n",ray->obj_hit->params.shape.params.cone.angle);
 	center_to_hit = vec_init(ray->obj_hit->pos, ray->hit_pos);
 	rot_axis = vec_crossproduct(vec_normalize(center_to_hit), real_axis);
 	rot_axis = vec_normalize(vec_opposite(rot_axis));
@@ -58,6 +59,7 @@ void				get_conenormal(t_ray *ray)
 	t_vec			hypotenuse;
 	t_vec			normal;
 
+//	ft_printf(" KFEJWELFKJ : %f\n",ray->obj_hit->params.shape.params.cone.angle);
 	real_axis = get_real_axis(ray);
 	hypotenuse = get_hypotenuse(ray, real_axis);
 	normal = vec_init(ray->hit_pos, hypotenuse);

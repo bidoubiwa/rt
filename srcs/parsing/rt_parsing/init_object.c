@@ -6,7 +6,7 @@
 /*   By: cvermand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 12:08:23 by cvermand          #+#    #+#             */
-/*   Updated: 2019/01/11 15:02:56 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:17:21 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void		init_cone(t_elem *elem, t_obj *obj)
 				CONE_ANGLE_REQUIRED,
 				"Angle of plane"),
 			0.0);
-//	obj->params.shape.intersect = &cone_intersection;
+	obj->params.shape.intersect = &cone_intersection;
 	obj->type = SHAPE;
+	obj->params.shape.material.type = PLAIN;
 }
 
 void		init_plane(t_elem *elem, t_obj *obj)
@@ -33,8 +34,9 @@ void		init_plane(t_elem *elem, t_obj *obj)
 	(void)elem;
 	(void)obj;
 	obj->params.shape.type = PLANE;
-//	obj->params.shape.intersect = &plane_intersection;
+	obj->params.shape.intersect = &plane_intersection;
 	obj->type = SHAPE;
+	obj->params.shape.material.type = PLAIN;
 }
 
 void		init_cylinder(t_elem *elem, t_obj *obj)
@@ -49,8 +51,9 @@ void		init_cylinder(t_elem *elem, t_obj *obj)
 				CYLINDER_RADIUS_REQUIRED,
 				"Radius of cylinder"),
 			0.0);
-//	obj->params.shape.intersect = &cylinder_intersection;
+	obj->params.shape.intersect = &cylinder_intersection;
 	obj->type = SHAPE;
+	obj->params.shape.material.type = PLAIN;
 }
 
 void		init_sphere(t_elem *elem, t_obj *obj)
@@ -65,6 +68,7 @@ void		init_sphere(t_elem *elem, t_obj *obj)
 				SPHERE_RADIUS_REQUIRED,
 				"Radius of sphere"),
 			0.0);
-//	obj->params.shape.intersect = &sphere_intersection;
+	obj->params.shape.intersect = &sphere_intersection;
 	obj->type = SHAPE;
+	obj->params.shape.material.type = PLAIN;
 }

@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 05:58:45 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 16:07:00 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:20:24 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void				print_object_common(t_obj *obj)
 			//ft_printf("\t\t%-10s : %f\n", "roll", material_light.roll);
 		}
 	}
+	else if (obj->type == LIGHT)
+			print_color(obj->params.light.color, "color");
 	ft_printf("\t\t%-10s : \n", "world to obj");
 	print_matrix(obj->world_to_obj);
 	ft_printf("\t\t%-10s : \n", "obj to world ");

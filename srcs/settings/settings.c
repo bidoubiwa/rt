@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 06:28:16 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 19:29:52 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 16:06:38 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void			renderers_settings(t_args *args, t_env *env)
 	}
 }
 
-void			settings_settings(t_args *args, t_env *env)
+void			rt_settings(t_args *args, t_env *env)
 {
 	renderers_settings(args, env);
 	if (args->verbose_mode == SETTINGS || args->verbose_mode == ALL_VERBOSE)

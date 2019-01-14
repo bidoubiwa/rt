@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 00:42:05 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 21:04:40 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:53:28 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,20 @@ int					window_closed(t_env *env)
 	return (0);
 }
 
-void				loop(t_args *args, t_env *env)
+void				rt_loop(t_args *args, t_env *env)
 {
+	int running = 1;
+	SDL_Event event;
+
+	while (running)
+	{
+		while(SDL_PollEvent(&event))
+			if((SDL_QUIT == event.type) || (SDL_KEYDOWN == event.type && SDL_SCANCODE_ESCAPE == event.key.keysym.scancode))
+				running = 0;
+//		SDL_RenderPresent(env->window->renderer);
+	}
 	env->args = args;
-	//	mlx_hook(env->win->winptr, 2, 0, key_pressed, env);
-//		mlx_hook(env->win->winptr, 17, 0, window_closed, env);
 	if (args->verbose_mode == LOOP || args->verbose_mode == ALL_VERBOSE)
 		verbose_loop(args, env);
-	//	mlx_loop(env->mlx);
 	free_env_rt(env);
 }

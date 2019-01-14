@@ -6,7 +6,7 @@
 /*   By: cvermand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 16:42:52 by cvermand          #+#    #+#             */
-/*   Updated: 2019/01/11 14:51:44 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:41:14 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,23 @@ static void		parse_rotation_translation(t_elem *elem, t_obj *obj)
 	set_matrix_obj(obj, rotation);
 }
 
+static void		parse_color_light(t_elem *child_elem, t_obj *obj)
+{
+	obj->params.light.color = parse_color(find_elem_by_key(child_elem, "color"), COLOR_REQ);
+		/*if (material_light.ambiant < 0.0 || material_light.ambiant > 1.0)
+			ft_error(AMBIANT_BAD_FORMAT);*/
+}
+
 static void		parse_color_information(t_elem *child_elem, t_obj *obj)
 {
-	t_plain				plain;
 	t_material_type		material_type;
 	t_material_light	material_light;
 
 	material_type = obj->params.shape.material.type;
 	if (material_type == PLAIN)
 	{
-		plain = obj->params.shape.material.params.plain;	
-		plain.color = parse_color(find_elem_by_key(child_elem, "color"), COLOR_REQ);
+		obj->params.shape.material.params.plain.color
+			= parse_color(find_elem_by_key(child_elem, "color"), COLOR_REQ);
 	}
 	if (material_type == PLAIN || material_type == TEXTURE)
 	{
@@ -76,6 +82,11 @@ static void		parse_color_information(t_elem *child_elem, t_obj *obj)
 			ft_error(SPECULAR_BAD_FORMAT);
 		if (material_light.diffuse < 0.0 || material_light.diffuse > 1.0)
 			ft_error(DIFFUSE_BAD_FORMAT);
+		
+		if (material_type == PLAIN)
+			obj->params.shape.material.params.plain.light = material_light;
+		else if (material_type == TEXTURE)
+			obj->params.shape.material.params.texture.light = material_light;
 		/*if (material_light.ambiant < 0.0 || material_light.ambiant > 1.0)
 			ft_error(AMBIANT_BAD_FORMAT);*/
 	}
@@ -92,8 +103,12 @@ t_obj			*parse_one_object(t_elem *elem,
 	parse_dir_lookat_pos(child_elem, obj);
 	parse_up_right_vec(child_elem, obj);
 	parse_obj(child_elem, obj);
-	if (obj->type != LIGHT && obj->type != LIGHT)
+	// TODO add light
+	if (obj->type == SHAPE)
 		parse_color_information(child_elem, obj);
+	if (obj->type == LIGHT)
+		parse_color_light(child_elem, obj);
+
 	parse_rotation_translation(child_elem, obj);
 	return (obj);
 }

@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 02:49:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 19:26:24 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 18:49:46 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void				check_for_closest(float length, t_ray *ray, t_obj *obj)
 
 void				get_normal(t_ray *ray)
 {
-	if (ray->obj_hit->type == SPHERE)
+	if (ray->obj_hit->params.shape.type == SPHERE)
 		get_spherenormal(ray);
-	else if (ray->obj_hit->type == PLANE)
+	else if (ray->obj_hit->params.shape.type == PLANE)
 		get_planenormal(ray);
-	else if (ray->obj_hit->type == CYLINDER)
+	else if (ray->obj_hit->params.shape.type == CYLINDER)
 		get_cylindernormal(ray);
-	else if (ray->obj_hit->type == CONE)
+	else if (ray->obj_hit->params.shape.type == CONE)
 		get_conenormal(ray);
 	else
 		ray->normal = vec_normalize(ray->obj_hit->dir);

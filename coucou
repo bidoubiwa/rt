@@ -1,0 +1,1430 @@
+x = 800 y = 600
+---------
+ key : (null)
+ closed : 1
+ type : ARRAY
+         ---------
+          key : (null)
+          closed : 1
+          type : OBJECT
+         ---------
+                   ---------
+                    key : name
+                    closed : 0
+                    type : STRING
+                    value : ma premiere scene
+                   ---------
+                   ---------
+                    key : objects
+                    closed : 1
+                    type : OBJECT
+                   ---------
+                             ---------
+                              key : spheres
+                              closed : 1
+                              type : ARRAY
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.900000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.700000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 10
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -35.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 30.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -30.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xa610ff
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 4.000000
+                                                 ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.900000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.700000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 10
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 5.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 20.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xffaaaa
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 4.000000
+                                                 ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.900000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.700000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 10
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 25.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 12.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -12.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0x10ff10
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 4.000000
+                                                 ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.900000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.700000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 10
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 3.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0x901044
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 4.000000
+                                                 ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.900000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.700000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 10
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -3.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -3.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -3.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0x9010f0
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 4.000000
+                                                 ---------
+                             ---------
+                             ---------
+                              key : cylinders
+                              closed : 1
+                              type : ARRAY
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 6.000000
+                                                           ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -3.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -3.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -3.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaaffff
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 1.000000
+                                                 ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -20.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 20.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 50.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -20.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 21.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 50.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaaff00
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 1.000000
+                                                 ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -10.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 20.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 10.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -8.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 19.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 10.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaa50ff
+                                                           ---------
+                                                 ---------
+                                                  key : radius
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 5.000000
+                                                 ---------
+                             ---------
+                             ---------
+                              key : planes
+                              closed : 1
+                              type : ARRAY
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -50.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -49.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaabbcc
+                                                           ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 50.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 49.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaabbcc
+                                                           ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 50.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 49.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaabbcc
+                                                           ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -50.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -49.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaabbcc
+                                                           ---------
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 100
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 50.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 0.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 49.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xaabbcc
+                                                           ---------
+                             ---------
+                             ---------
+                              key : cones
+                              closed : 1
+                              type : ARRAY
+                                       ---------
+                                        key : (null)
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : specular
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.800000
+                                                 ---------
+                                                 ---------
+                                                  key : diffuse
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.600000
+                                                 ---------
+                                                 ---------
+                                                  key : brillance
+                                                  closed : 0
+                                                  type : INTEGER
+                                                  value : 50
+                                                 ---------
+                                                 ---------
+                                                  key : position
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -29.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -40.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 10.000000
+                                                           ---------
+                                                 ---------
+                                                  key : lookat
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : x
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -30.000000
+                                                           ---------
+                                                           ---------
+                                                            key : y
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : -38.000000
+                                                           ---------
+                                                           ---------
+                                                            key : z
+                                                            closed : 0
+                                                            type : FLOAT
+                                                            value : 11.000000
+                                                           ---------
+                                                 ---------
+                                                  key : color
+                                                  closed : 1
+                                                  type : OBJECT
+                                                 ---------
+                                                           ---------
+                                                            key : hex
+                                                            closed : 0
+                                                            type : STRING
+                                                            value : 0xff50aa
+                                                           ---------
+                                                 ---------
+                                                  key : angle
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 30.000000
+                                                 ---------
+                             ---------
+                   ---------
+                    key : lights
+                    closed : 1
+                    type : ARRAY
+                             ---------
+                              key : (null)
+                              closed : 1
+                              type : OBJECT
+                             ---------
+                                       ---------
+                                        key : position
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : x
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 15.000000
+                                                 ---------
+                                                 ---------
+                                                  key : y
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 25.000000
+                                                 ---------
+                                                 ---------
+                                                  key : z
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -15.000000
+                                                 ---------
+                                       ---------
+                                        key : color
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : hex
+                                                  closed : 0
+                                                  type : STRING
+                                                  value : 0xffffff
+                                                 ---------
+                                       ---------
+                                        key : intensity
+                                        closed : 0
+                                        type : FLOAT
+                                        value : 0.900000
+                                       ---------
+                             ---------
+                              key : (null)
+                              closed : 1
+                              type : OBJECT
+                             ---------
+                                       ---------
+                                        key : position
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : x
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -15.000000
+                                                 ---------
+                                                 ---------
+                                                  key : y
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 25.000000
+                                                 ---------
+                                                 ---------
+                                                  key : z
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -15.000000
+                                                 ---------
+                                       ---------
+                                        key : color
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : hex
+                                                  closed : 0
+                                                  type : STRING
+                                                  value : 0xffffff
+                                                 ---------
+                                       ---------
+                                        key : intensity
+                                        closed : 0
+                                        type : FLOAT
+                                        value : 0.600000
+                                       ---------
+                   ---------
+                   ---------
+                    key : cameras
+                    closed : 1
+                    type : ARRAY
+                             ---------
+                              key : (null)
+                              closed : 1
+                              type : OBJECT
+                             ---------
+                                       ---------
+                                        key : position
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : x
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 20.000000
+                                                 ---------
+                                                 ---------
+                                                  key : y
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 10.000000
+                                                 ---------
+                                                 ---------
+                                                  key : z
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -100.000000
+                                                 ---------
+                                       ---------
+                                        key : lookat
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : x
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.000000
+                                                 ---------
+                                                 ---------
+                                                  key : y
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -50.000000
+                                                 ---------
+                                                 ---------
+                                                  key : z
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 50.000000
+                                                 ---------
+                                       ---------
+                                        key : fov
+                                        closed : 0
+                                        type : FLOAT
+                                        value : 60.000000
+                                       ---------
+                             ---------
+                              key : (null)
+                              closed : 1
+                              type : OBJECT
+                             ---------
+                                       ---------
+                                        key : position
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : x
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.000000
+                                                 ---------
+                                                 ---------
+                                                  key : y
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 25.000000
+                                                 ---------
+                                                 ---------
+                                                  key : z
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -400.000000
+                                                 ---------
+                                       ---------
+                                        key : lookat
+                                        closed : 1
+                                        type : OBJECT
+                                       ---------
+                                                 ---------
+                                                  key : x
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 0.000000
+                                                 ---------
+                                                 ---------
+                                                  key : y
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : -50.000000
+                                                 ---------
+                                                 ---------
+                                                  key : z
+                                                  closed : 0
+                                                  type : FLOAT
+                                                  value : 50.000000
+                                                 ---------
+                                       ---------
+                                        key : fov
+                                        closed : 0
+                                        type : FLOAT
+                                        value : 60.000000
+                                       ---------
+                   ---------
+---------

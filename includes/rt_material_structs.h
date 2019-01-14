@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 20:20:45 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 16:17:08 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:38:02 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 typedef struct				s_material_light
 {
-	float			specular; // voir si toutes ces valeurs sont pas liees au materia
-	
+	float			specular; // voir si toutes ces valeurs sont pas liees au materia	
 	float			diffuse;
 	float			brillance;
 	float			reflection;

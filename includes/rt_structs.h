@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/12 15:05:53 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 15:55:18 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct		s_env
 {
 	t_scene			*scene;
 	t_args			*args;
-	t_win			*win;
+	t_win			*window;
 }					t_env;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 03:45:34 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 19:30:07 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 16:49:08 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			malloc_raytracing(t_scene *scene, t_renderer *renderer,
 	raymax = renderer->height * renderer->width * renderer->depth;
 	while (i < raymax)
 	{
-		shoot_ray(scene, &renderer->renderer[i]);
+		shoot_ray(scene, &renderer->renderer[i]); // ici
 		i++;
 	}
 	i = 0;

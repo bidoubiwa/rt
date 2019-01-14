@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raytracing.c                                       :+:      :+:    :+:   */
+/*   verbose_printing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/27 03:44:10 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 16:39:59 by cvermand         ###   ########.fr       */
+/*   Created: 2018/12/27 09:51:58 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/14 16:01:23 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-void			raytracing(t_scene *scene, t_obj *camera)
+void					verbose_printing(t_args *args, t_scene *scenes)
 {
-	t_renderer	*renderer;
-
-	renderer = camera->params.cam.renderer;
-	malloc_raytracing(scene, renderer, camera);
+	(void)args;
+	(void)scenes;
+	ft_printf("verbose_printing not done yet !\n");
 }

@@ -6,13 +6,13 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/12 01:24:53 by toliver           #+#    #+#              #
-#    Updated: 2019/01/07 16:27:29 by toliver          ###   ########.fr        #
+#    Updated: 2019/01/14 16:36:10 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror -Ofast
+FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
 
 FILES = atoi \
 	   atof \

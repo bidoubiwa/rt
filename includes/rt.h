@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 21:52:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 21:02:38 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 18:02:47 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ t_ray				get_actual_ray(t_renderer *renderer, t_obj *cam, int x,
 t_ray				*renderer_malloc(t_renderer *renderer, t_obj *cam);
 t_renderer			*renderer_init(t_obj *cam, t_args *arg, t_env *env);
 void				renderers_settings(t_args *args, t_env *env);
-void				settings_settings(t_args *args, t_env *env);
+void				rt_settings(t_args *args, t_env *env);
 
 void				verbose_settings(t_args *args, t_env *env);
 void				print_renderers(t_scene *scene);
@@ -158,7 +158,7 @@ void				print_renderer(t_renderer *renderer);
 /*
 ** RUNNING FUNCTIONS
 */
-void				running_rt(t_args *args, t_scene *scenes);
+void				rt_running(t_args *args, t_scene *scenes);
 t_ray				reflect_ray(t_ray *ray);
 t_vec				reflect_vec(t_vec vec, t_vec axis);
 
@@ -188,8 +188,6 @@ void				get_normal(t_ray *ray);
 
 void				malloc_raytracing(t_scene *scene, t_renderer *renderer,
 						t_obj *camera);
-void				stack_raytracing(t_scene *scene, t_renderer *renderer,
-						t_obj *camera);
 void				raytracing(t_scene *scene, t_obj *camera);
 t_ray				reflect_ray(t_ray *ray);
 t_vec				reflect_vector(t_vec vec, t_vec axis);
@@ -211,11 +209,18 @@ void				print_matrix(t_matrix m);
 void				print_vec(t_vec v);
 
 /*
+** PRINTING FUNCTIONS
+*/
+
+void				rt_printing(t_args *args, t_scene *scenes, t_win *win);
+void				verbose_printing(t_args *args, t_scene *scenes);
+
+/*
 ** LOOP FUNCTIONS
 */
 
 int					key_pressed(int key, t_env *env);
-void				loop(t_args *args, t_env *env);
+void				rt_loop(t_args *args, t_env *env);
 void				free_env_rt(t_env *env);
 
 void				verbose_loop(t_args *args, t_env *env);

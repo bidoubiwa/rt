@@ -6,13 +6,13 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/12 01:24:53 by toliver           #+#    #+#              #
-#    Updated: 2019/01/07 16:59:23 by toliver          ###   ########.fr        #
+#    Updated: 2019/01/14 16:36:21 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftg.a
 
-FLAGS = -Wall -Wextra -Werror -Ofast -g3
+FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
 
 FILES = definition\
 		vec\

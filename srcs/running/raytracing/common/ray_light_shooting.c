@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 08:50:30 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 20:53:07 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 18:28:47 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_rgb			get_ambiant(t_ray *ray, t_scene *scene)
 	t_rgb				color;
 	t_obj				*lights;
 	float				total_intensity;
-	t_material_type		material_type;
+//	t_material_type		material_type;
 
 	color = rgb_init(0);
 	lights = scene->lights;
@@ -31,14 +31,14 @@ t_rgb			get_ambiant(t_ray *ray, t_scene *scene)
 	}
 	if (total_intensity != 0)
 		color = rgb_div(color, total_intensity);
-	material_type = ray->obj_hit->params.shape.material.type;
-	if (material_type == PLAIN)
-	{
+//	material_type = ray->obj_hit->params.shape.material.type;
+//	if (material_type == PLAIN)
+//	{
 		color = rgb_mul(color, 0.1);
 		color = rgb_mul_rgb(ray->obj_hit->params.shape.material.params.plain.color, color);
 		color = rgb_mul(color, ray->obj_hit->params.shape.material.params.plain.light.diffuse);
 		rgb_updatevalue(&color);
-	}
+//	}
 	return (color);
 }
 
@@ -82,8 +82,8 @@ t_rgb			get_diffuse(t_ray *ray, t_ray to_light, t_obj *light)
 
 	rgb = rgb_init(0);
 	material_type = ray->obj_hit->params.shape.material.type;
-	if (material_type == PLAIN)
-	{
+//	if (material_type == PLAIN)
+//	{
 		dotproduct = vec_dotproduct(ray->normal,
 				vec_normalize(vec_init(ray->hit_pos, light->pos)));
 		if (dotproduct <= 0)
@@ -93,7 +93,7 @@ t_rgb			get_diffuse(t_ray *ray, t_ray to_light, t_obj *light)
 		rgb = rgb_mul_rgb(rgb, ray->obj_hit->params.shape.material.params.plain.color);
 		rgb_updatevalue(&rgb);
 		(void)to_light;
-	}
+//	}
 	return (rgb);
 }
 
@@ -104,10 +104,10 @@ void			set_light_colors(t_rgb ambiant, t_rgb diffuse, t_rgb specular,
 	t_material_type		material_type;
 
 	material_type = ray->obj_hit->params.shape.material.type;
-	if (material_type == PLAIN)
+	//if (material_type == PLAIN)
 		material_light = ray->obj_hit->params.shape.material.params.plain.light;	
-	else if (material_type == TEXTURE)
-		material_light = ray->obj_hit->params.shape.material.params.texture.light;
+	//else if (material_type == TEXTURE)
+	//	material_light = ray->obj_hit->params.shape.material.params.texture.light;
 	diffuse = rgb_mul(diffuse, material_light.diffuse);
 	specular = rgb_mul(specular,  material_light.specular);
 	ray->color = rgb_add(ambiant, diffuse);
@@ -122,12 +122,13 @@ void			shoot_ray_lights(t_scene *scene, t_ray *ray, t_obj *cam)
 	t_rgb		specular_color;
 	t_ray		to_light;
 	t_obj		*lights;
-	t_material_type		material_type;
+//	t_material_type		material_type;
 
-	material_type = ray->obj_hit->params.shape.material.type;
-	if (material_type == PLAIN || material_type == TEXTURE)
-	{
+//	material_type = ray->obj_hit->params.shape.material.type;
+//	if (material_type == PLAIN || material_type == TEXTURE)
+//	{
 		ambiant_color = (scene->lights) ? get_ambiant(ray, scene) : rgb_init(0);
+//		ambiant_color = rgb_init(0);
 		diffuse_color = rgb_init(0);
 		specular_color = rgb_init(0);
 		lights = scene->lights;
@@ -146,5 +147,5 @@ void			shoot_ray_lights(t_scene *scene, t_ray *ray, t_obj *cam)
 			lights = lights->next;
 		}
 		set_light_colors(ambiant_color, diffuse_color, specular_color, ray);
-	}
+//	}
 }

@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/13 21:01:02 by cvermand         ###   ########.fr        #
+#    Updated: 2019/01/14 16:37:14 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ LIBG = ./SDL2.framework/Versions/A/SDL2
 
 LIBGFLAGS = -F ./ -framework SDL2
 
-FLAGS = -Wall -Wextra -Werror -Ofast
+FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
+
 
 OBJS = $(addprefix objs/, $(addsuffix .o, \
 		$(addprefix core/, \
@@ -170,6 +171,12 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 			verbose_running \
 		) \
 	) \
+	$(addprefix printing/, \
+		printing \
+		$(addprefix verbose/, \
+			verbose_printing \
+		) \
+	) \
 	$(addprefix loop/, \
 		loop \
 		free_env \
@@ -200,7 +207,7 @@ all: $(NAME)
 $(NAME): objs $(OBJS) $(HEADERS) 
 
 	@printf "\033[92m\033[1:32mCompiling -------------> \033[91m$(NAME)\033[0m:\033[0m%-16s\033[32m[✔]\033[0m\n"
-	@make -C ./libs/libft
+	@make -C ./libs/libft 
 	@make -C ./libs/libftg
 	@make -C ./libs/ft_printf
 	@gcc -o $(NAME) $(FLAGS) $(LIBS) $(LIBG) $(LIBGFLAGS) $(OBJS) $(INCLUDES)
@@ -232,6 +239,8 @@ objs:
 	@mkdir objs/running/raytracing/primitives/sphere
 	@mkdir objs/running/raytracing/common
 	@mkdir -p objs/loop/verbose
+	@mkdir -p objs/printing/verbose
+
 
 clean:
 #	@	make -C ./libs/libft clean

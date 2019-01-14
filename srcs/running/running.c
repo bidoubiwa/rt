@@ -6,13 +6,13 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 03:11:04 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/13 19:14:26 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 16:38:53 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-void			running_rt(t_args *args, t_scene *scenes)
+void			rt_running(t_args *args, t_scene *scenes)
 {
 	t_scene		*scene;
 	t_obj		*camera;

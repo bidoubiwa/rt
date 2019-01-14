@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 22:21:06 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/12 15:10:16 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/14 15:55:11 by cvermand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ t_renderer		*renderer_init(t_obj *cam, t_args *args, t_env *env)
 
 	(void)args;
 	renderer = (t_renderer*)ft_malloc(sizeof(t_renderer));
-	renderer->width = env->win->width;
-	renderer->height = env->win->height;
+	renderer->width = env->window->width;
+	renderer->height = env->window->height;
 	renderer->depth = 1;
 	renderer->top_left_vec =
-		get_top_left_vec(cam, &(renderer->increment), env->win);
+		get_top_left_vec(cam, &(renderer->increment), env->window);
 //	renderer->img = img_init(env->win->width, env->win->height, env->mlx);
 	renderer->renderer = renderer_malloc(renderer, cam);
 	return (renderer);
