@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 05:56:24 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/11 15:05:45 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 13:12:40 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 static char			*object_type_string(t_obj *obj)
 {
-	if (obj->type == PLANE)
+	if (obj->params.shape.type == PLANE)
 		return ("PLAN");
-	if (obj->type == CONE)
+	if (obj->params.shape.type == CONE)
 		return ("CONE");
-	if (obj->type == CYLINDER)
+	if (obj->params.shape.type == CYLINDER)
 		return ("CYLINDER");
-	if (obj->type == SPHERE)
+	if (obj->params.shape.type == SPHERE)
 		return ("SPHERE");
-	if (obj->type == LIGHT)
+	if (obj->params.shape.type == LIGHT)
 		return ("LIGHT");
-	if (obj->type == CAMERA)
+	if (obj->params.shape.type == CAMERA)
 		return ("CAMERA");
 	return ("WRONG TYPE !");
 }

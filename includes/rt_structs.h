@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:59:19 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 15:55:18 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 16:52:00 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include "rt_obj_structs.h"
 # include "args_parsing.h"
 
-# define WINX 800
-# define WINY 600
+# define WINX 5120
+# define WINY 2880
 
 typedef struct		s_scene
 {

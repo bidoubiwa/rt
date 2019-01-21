@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:58:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/12 15:08:09 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 16:17:45 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ typedef struct		s_cylinder
 	float			radius;
 }					t_cylinder;
 
+typedef struct		s_quadric
+{
+	float			a;
+	float			b;
+	float			c;
+	float			d;
+	float			e;
+	float			f;
+	float			g;
+	float			h;
+	float			i;
+	float			j;
+	float			k;
+}					t_quadric;
+
 typedef struct		s_renderer
 {
 	int				width;
@@ -62,6 +77,8 @@ typedef enum		e_shape_type
 	PLANE,
 	CONE,
 	CYLINDER,
+	QUADRIC
+//	ELLIPSOID,
 //	MOEBIUS,
 //	CUBE_HOLE,
 //	NAPPE,
@@ -94,7 +111,7 @@ typedef union		u_shape_params
 //	t_other			other;
 //	t_paraboloid	paraboloid;
 //	t_hyperboloid	hyperboloid;
-//	t_quadric		quadric;
+	t_quadric		quadric;
 }					t_shape_params;
 
 typedef struct		s_shape

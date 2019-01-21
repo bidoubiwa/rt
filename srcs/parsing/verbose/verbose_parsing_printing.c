@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 05:58:45 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 17:20:24 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 13:01:53 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void				print_object_common(t_obj *obj)
 	print_vec(obj->up);
 	ft_printf("\t\t%-10s : ", "dir");
 	print_vec(obj->dir);
-	if (obj->type != LIGHT && obj->type != LIGHT)
+	if (obj->type != LIGHT)
 	{
 		material_type = obj->params.shape.material.type;
 		if (material_type == PLAIN)

@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 08:50:30 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 18:28:47 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 16:52:06 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void			set_light_colors(t_rgb ambiant, t_rgb diffuse, t_rgb specular,
 	specular = rgb_mul(specular,  material_light.specular);
 	ray->color = rgb_add(ambiant, diffuse);
 	ray->color = rgb_add(ray->color, specular);
-	rgb_updatevalue(&ray->color);
+//	rgb_updatevalue(&ray->color);
 }
 
 void			shoot_ray_lights(t_scene *scene, t_ray *ray, t_obj *cam)

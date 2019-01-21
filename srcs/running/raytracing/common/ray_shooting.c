@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 03:26:38 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 18:05:09 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 12:59:45 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,22 @@ static void			set_ray_hitparams(t_ray *ray)
 	if (material_type == PLAIN)
 		ray->color = ray->obj_hit->params.shape.material.params.plain.color;
 }
+/*
+void				shoot_one_ray(t_scene *scene, t_ray *ray)
+{
+	t_obj			*objptr;
+	float			current_hit;
 
+	current_hit = INFINITY;
+	objptr = scene->objs;
+	while (objptr)
+	{
+		objptr->params.shape.intersect(ray, objptr);
+		objptr = objptr->next;
+	}
+	set_ray_hitparams(ray);
+}
+*/
 void				shoot_ray(t_scene *scene, t_ray *ray)
 {
 	t_obj			*objptr;
@@ -48,4 +63,9 @@ void				shoot_ray(t_scene *scene, t_ray *ray)
 		objptr = objptr->next;
 	}
 	set_ray_hitparams(ray);
+//	if (ray->obj_hit && ray->obj_hit->params.shape.reflection == 1)
+//	{
+//		reflect_this_ray(ray);
+//		shoot_one_ray(scene, ray);
+//	}
 }

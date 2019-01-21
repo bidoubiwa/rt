@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 21:52:51 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 18:02:47 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 11:55:38 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ void				print_renderer(t_renderer *renderer);
 void				rt_running(t_args *args, t_scene *scenes);
 t_ray				reflect_ray(t_ray *ray);
 t_vec				reflect_vec(t_vec vec, t_vec axis);
-
+void				reflect_this_ray(t_ray *ray);
 /*
 ** PRIMITIVES FUNCTIONS
 */
@@ -170,12 +170,14 @@ void				get_conenormal(t_ray *ray);
 void				get_cylindernormal(t_ray *ray);
 void				get_planenormal(t_ray *ray);
 void				get_spherenormal(t_ray *ray);
+void				get_quadricnormal(t_ray *ray);
 
 float				sphere_radius(t_obj *sphere);
 void				sphere_intersection(t_ray *ray, t_obj *sphere);
 void				plane_intersection(t_ray *ray, t_obj *plane);
 void				cylinder_intersection(t_ray *ray, t_obj *plane);
 void				cone_intersection(t_ray *ray, t_obj *cone);
+void				quadric_intersection(t_ray *ray, t_obj *quadric);
 
 int					quadratic(float a, float b, float c, float l[2]);
 void				check_for_closest(float length, t_ray *ray, t_obj *obj);

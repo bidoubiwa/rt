@@ -6,7 +6,7 @@
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 02:49:39 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/14 18:49:46 by cvermand         ###   ########.fr       */
+/*   Updated: 2019/01/21 04:36:00 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void				get_normal(t_ray *ray)
 		get_cylindernormal(ray);
 	else if (ray->obj_hit->params.shape.type == CONE)
 		get_conenormal(ray);
+	else if (ray->obj_hit->params.shape.type == QUADRIC)
+		get_quadricnormal(ray);
 	else
 		ray->normal = vec_normalize(ray->obj_hit->dir);
 }

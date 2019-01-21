@@ -6,7 +6,7 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/14 16:37:14 by cvermand         ###   ########.fr        #
+#    Updated: 2019/01/21 11:21:17 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -153,10 +153,11 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 					intersect \
 					normal \
 				) \
+				$(addprefix quadric/, \
+					intersect \
+					normal \
+				) \
 				common \
-			) \
-			$(addprefix stack/, \
-				stack_raytracing \
 			) \
 			$(addprefix malloc/, \
 				malloc_raytracing \
@@ -231,12 +232,13 @@ objs:
 	@mkdir -p objs/parsing/json_parser
 	@mkdir -p objs/tools/colors_handling
 	@mkdir -p objs/running/verbose
+#	@mkdir  objs/running/raytracing/stack
 	@mkdir -p objs/running/raytracing/malloc
-	@mkdir objs/running/raytracing/stack
 	@mkdir -p objs/running/raytracing/primitives/cone
 	@mkdir objs/running/raytracing/primitives/cylinder
 	@mkdir objs/running/raytracing/primitives/plane
 	@mkdir objs/running/raytracing/primitives/sphere
+	@mkdir objs/running/raytracing/primitives/quadric
 	@mkdir objs/running/raytracing/common
 	@mkdir -p objs/loop/verbose
 	@mkdir -p objs/printing/verbose

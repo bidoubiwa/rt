@@ -5,22 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/29 02:47:07 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/21 06:10:42 by toliver          ###   ########.fr       */
+/*   Created: 2019/01/21 04:18:57 by toliver           #+#    #+#             */
+/*   Updated: 2019/01/21 08:16:54 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt.h"
 
-void				get_cylindernormal(t_ray *ray)
+void				get_quadricnormal(t_ray *ray)
 {
-	t_vec			center_to_hit;
-	float			len;
-	t_vec			center_under_hit;
+	t_quadric		var;
+	t_vec			pos;
+	t_vec			normal;
 
-	center_to_hit = vec_init(ray->obj_hit->pos, ray->hit_pos);
-	len = vec_dotproduct(center_to_hit, ray->obj_hit->dir);
-	center_under_hit =
-		vec_add(ray->obj_hit->pos, vec_mul(ray->obj_hit->dir, len));
-	ray->normal = vec_normalize(vec_init(center_under_hit, ray->hit_pos));
+	var = ray->obj_hit->params.shape.params.quadric;
+	pos = ray->hit_pos;
+	normal.x = 2 * var.a * pos.x + var.d * pos.y + var.e * pos.z + var.g;
+	normal.y = 2 * var.b * pos.y + var.d * pos.x + var.f * pos.z + var.h;
+	normal.z = 2 * var.c * pos.z + var.e * pos.x + var.f * pos.y + var.i;
+	normal = vec_norm(normal);
+	if (vec_dot(ray->dir, normal) > 0)
+		normal = vec_opposite(normal);
+	ray->normal = normal;
+//	print_vec(normal);
 }
