@@ -53,7 +53,7 @@ void				_shoot_ray(t_scene *scene, t_ray *ray)
 void			ray_tracing(t_scene *scene, t_ray *ray, t_obj *cam, float contrib)
 {
 	t_ray		*reflected_ray;
-	t_ray		*refracted_ray;
+//	t_ray		*refracted_ray;
 
 	_shoot_ray(scene, ray);
 	if (ray->length != INFINITY)
@@ -68,8 +68,8 @@ void			ray_tracing(t_scene *scene, t_ray *ray, t_obj *cam, float contrib)
 		}
 //		if (ray->obj_hit->params.shape.alpha != 1)
 //		{
-			refracted_ray = (t_ray*)ft_malloc(sizeof(t_ray));
-			*refracted_ray = ray_init(vec_sub(ray->hit_pos, vec_mul(vec_opposite(ray->normal), (TOLERANCE * 2.0))), ray->dir);
+//			refracted_ray = (t_ray*)ft_malloc(sizeof(t_ray));
+//			*refracted_ray = ray_init(vec_sub(ray->hit_pos, vec_mul(vec_opposite(ray->normal), (TOLERANCE * 2.0))), ray->dir);
 //		}
 	}
 }

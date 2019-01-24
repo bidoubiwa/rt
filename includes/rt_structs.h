@@ -16,8 +16,8 @@
 #include "rt_obj_structs.h"
 # include "args_parsing.h"
 
-# define WINX 5120
-# define WINY 2880
+# define WINX 800
+# define WINY 600
 
 typedef struct		s_scene
 {

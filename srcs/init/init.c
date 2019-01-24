@@ -17,7 +17,7 @@ void				rt_win_init(t_args *args, t_env *env)
 	(void)args;
 	env->window = (t_win*)ft_malloc(sizeof(t_win));
 	env->window->win = SDL_CreateWindow("RT", SDL_WINDOWPOS_UNDEFINED,
-			SDL_WINDOWPOS_UNDEFINED, WINX, WINY, SDL_WINDOW_OPENGL); // ici changer les flags pour virer le fullscreen
+			SDL_WINDOWPOS_UNDEFINED, WINX, WINY, SDL_WINDOW_ALLOW_HIGHDPI); // ici changer les flags pour virer le fullscreen
 	if (env->window->win == NULL)
 		ft_error("Window init failed !\n");
 	SDL_GetWindowSize(env->window->win, &env->window->width, &env->window->height);
@@ -31,11 +31,14 @@ void				rt_win_init(t_args *args, t_env *env)
 t_env				*rt_env_init(t_args *args)
 {
 	t_env			*env;
-
+	SDL_Event		e;
 	(void)args;
 	env = (t_env*)ft_malloc(sizeof(t_env));
 	env->scene = NULL;
+	SDL_Init(SDL_INIT_EVERYTHING);
 	rt_win_init(args, env);
+	while (SDL_PollEvent(&e))
+			;
 	return (env);
 }
 

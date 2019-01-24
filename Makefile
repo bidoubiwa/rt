@@ -16,11 +16,11 @@ LIBS = ./libs/libft/libft.a \
 	   ./libs/libftg/libftg.a \
 	   ./libs/ft_printf/libftprintf.a \
 
-INCLUDES = -I includes/ -I ./libs/libft/includes/ -I ./libs/libftg/includes/ -I ./libs/ft_printf/includes/ -I ./SDL2.framework/Versions/A/Headers/
+INCLUDES = -I includes/ -I ./libs/libft/includes/ -I ./libs/libftg/includes/ -I ./libs/ft_printf/includes/ -I /Library/Frameworks/SDL2.framework/Versions/A/Headers
 
 LIBG = ./SDL2.framework/Versions/A/SDL2 
 
-LIBGFLAGS = -F ./ -framework SDL2
+LIBGFLAGS = -F /Library/Frameworks/ -framework SDL2
 
 FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
 

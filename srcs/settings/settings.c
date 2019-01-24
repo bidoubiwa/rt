@@ -68,7 +68,7 @@ void			_tmp_settings(t_env *env)
 void			rt_settings(t_args *args, t_env *env)
 {
 	renderers_settings(args, env);
-	_tmp_settings(env);
+//	_tmp_settings(env);
 	if (args->verbose_mode == SETTINGS || args->verbose_mode == ALL_VERBOSE)
 		verbose_settings(args, env);
 }
