@@ -3,70 +3,74 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: cvermand <cvermand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/09/20 19:50:33 by toliver           #+#    #+#              #
-#    Updated: 2019/01/21 11:21:17 by toliver          ###   ########.fr        #
+#    Created: 2019/02/11 10:15:44 by cvermand          #+#    #+#              #
+#    Updated: 2019/02/18 17:09:00 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = rt
+NAME = RT
+CC = gcc
+C++ = g++
 
-LIBS = ./libs/libft/libft.a \
-	   ./libs/libftg/libftg.a \
-	   ./libs/ft_printf/libftprintf.a \
+DEBUG = -g3
+FLAGS = -Wall -Wextra -Werror
 
-INCLUDES = -I includes/ -I ./libs/libft/includes/ -I ./libs/libftg/includes/ -I ./libs/ft_printf/includes/ -I /Library/Frameworks/SDL2.framework/Versions/A/Headers
+MODE_TYPE = no_mode
+ADD_FLAGS = -Wall -Wextra -Werror
+C_INCLUDES = -I ${VK_SDK}/macos/include\
+			-I ./libs/glfw/deps\
+			-I ./libs/glfw/include\
+			-I ./libs/libft/includes/\
+			-I ./libs/libftg/includes/\
+			-I ./libs/ft_printf/includes \
+			-I ./includes/c_includes\
+			-I ./libs/wgn2/includes
 
-LIBG = ./SDL2.framework/Versions/A/SDL2 
+SHADERS = ./shaders
+VK_SDK = ./vulknsdk
 
-LIBGFLAGS = -F /Library/Frameworks/ -framework SDL2
+VK_SDK_PATH = ./libs/vulkansdk/macOS/bin/glslc -fshader-stage=
+VK_OBJS_PATH = objs/vulkan/
+LIBS = 	./libs/vulkansdk/macos/lib \
+		./libs/glfw/src/libglfw3.a \
+		./libs/vulkansdk/macos/lib/libvulkan.dylib \
+		-framework Cocoa \
+		-framework IOKit \
+		-framework CoreFoundation \
+		-framework CoreVideo \
+		./libs/ft_printf/libftprintf.a \
+		./libs/libftg/libftg.a \
+		./libs/libft/libft.a \
+		./libs/wgn2/wgn2.a \
 
-FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
+C_HEADERS_DIR = includes/c_includes/
+CPP_HEADERS_DIR = ./libs/wgn2/includes/
+HEADERS = $(addprefix $(C_HEADERS_DIR), $(addsuffix .h, \
+		  json_parser\
+		  json_parser_errors\
+		  rt_config\
+		  rt_math \
+		  rt_scene \
+		  rt_parser \
+		  rt_errors \
+		  rt_required_information \
+		  rt \
+		  rt_object \
+		  rt_scene_file \
+		)) \
 
-
-OBJS = $(addprefix objs/, $(addsuffix .o, \
+C_OBJS = $(addprefix objs/, $(addsuffix .o, \
 		$(addprefix core/, \
-			main \
-			errors \
-			$(addprefix editor/, \
-				$(addprefix init/, \
-					init \
-					) \
-				$(addprefix settings/, \
-					settings \
-					) \
-				$(addprefix running/, \
-					running \
-					) \
-				$(addprefix quit/, \
-					quit \
-					) \
-				launch_editor \
-				) \
-			) \
-		$(addprefix args_parsing/, \
-			args_parsing \
-			parse_args \
-			usage \
-			big_flag \
-			small_flag \
-			parse_mode \
-			$(addprefix verbose/, \
-				verbose_args \
-				verbose_args_mode_bool \
-				verbose_args_mode_multi \
-				verbose_args_files \
-			) \
-		) \
-		$(addprefix init/, \
+			cmain \
+			errors\
+			malloc\
+			check\
+			event_handler \
 			init \
-			$(addprefix verbose/, \
-			verbose_env \
-			)\
-		) \
-	$(addprefix parsing/, \
-		parsing \
+			core_utils\
+		)\
 		$(addprefix json_parser/, \
 			array_recursive \
 			elem_struct_functions \
@@ -81,187 +85,132 @@ OBJS = $(addprefix objs/, $(addsuffix .o, \
 			recognize_null \
 			recognize_array \
 			recognize_object \
+			recognize_extension \
 			object_recursive \
 			recognize_type \
 			recognize_key \
 			singleton \
 		) \
-		$(addprefix rt_parsing/, \
-			color_utils \
-			defaults \
-			init_object \
-			key_utils \
-			key_types_utils \
-			key_types_number \
-			malloc_structures \
-			parse_arithmetic_values \
-			parse_cameras \
-			parse_colors \
-			parse_light \
-			parse_object \
-			parse_objects \
-			parse_object_direction \
-			parse_object_direction_extension \
-			parse_scene \
-			parse_world_coord \
-			parse_vectors \
-			parsing \
-			required \
-		) \
-		$(addprefix verbose/, \
-			verbose_arithmetic_values \
-			verbose_parsing \
-			verbose_parsing_loops \
-			verbose_parsing_printing \
-		) \
-	) \
-	$(addprefix settings/, \
-		settings \
-		ray \
-		renderer_init \
-		$(addprefix verbose/, \
-			verbose_settings \
-		) \
-	) \
-	$(addprefix tools/, \
-		math_tools \
-		general_tools \
-		vector \
-		$(addprefix colors_handling/, \
-			colors_init \
-			rgb_functions \
-			) \
-		) \
-	$(addprefix running/, \
-		running \
-		$(addprefix raytracing/, \
-			raytracing \
-			$(addprefix primitives/, \
-				$(addprefix cone/, \
-					intersect \
-					normal \
-				) \
-				$(addprefix cylinder/, \
-					intersect \
-					normal \
-				) \
-				$(addprefix plane/, \
-					intersect \
-					normal \
-				) \
-				$(addprefix sphere/, \
-					intersect \
-					normal \
-				) \
-				$(addprefix quadric/, \
-					intersect \
-					normal \
-				) \
-				common \
-			) \
-			$(addprefix malloc/, \
-				malloc_raytracing \
-			) \
-			$(addprefix common/, \
-				ray_shooting \
-				ray_light_shooting \
-				reflect \
-			) \
-		) \
-		$(addprefix verbose/, \
-			verbose_running \
-		) \
-	) \
-	$(addprefix printing/, \
-		printing \
-		$(addprefix verbose/, \
-			verbose_printing \
-		) \
-	) \
-	$(addprefix loop/, \
-		loop \
-		free_env \
-		$(addprefix verbose/, \
-			verbose_loop \
-		) \
-	) \
-	\
-)) 
-
-
-HEADERS = includes/rt.h \
-		  includes/rt_structs.h \
-		  includes/rt_color_structs.h \
-		  includes/rt_obj_structs.h \
-		  includes/rt_ray_structs.h \
-		  includes/rt_material_structs.h \
-		  includes/json_parser.h \
-		  includes/json_parser_errors.h \
-		  includes/libft_errors.h \
-		  includes/rt_errors.h \
-		  includes/editor.h \
-		  includes/editor_struct.h \
-		  includes/rt_required_information.h \
+		$(addprefix rt_parser/, \
+			$(addprefix parser/, \
+				parse_cameras\
+				parse_scene\
+				parse_object\
+				parse_forms\
+				parse_quadric\
+				parse_vectors\
+				parse_transform\
+				parse_material\
+				parse_basic_quadric\
+				parse_arithmetic_values\
+				parse_colors \
+				parse_hex_rgb \
+				parse_child \
+				parse_light \
+				parse_copy \
+				parse_common \
+			)\
+			$(addprefix config/, \
+					extract_config \
+					array_config \
+					bool_config \
+					integer_config\
+					float_config\
+					string_config\
+					string_config_ext\
+					object_config\
+					parse_config\
+					extract_errors\
+					check_required_type_config\
+					min_max\
+					config_errors\
+			)\
+			$(addprefix utils/, \
+				$(addprefix color_utils/, \
+					colors_init\
+					rgb_functions\
+				)\
+				compare_tool \
+				id_singleton\
+				arithmetic_tools\
+				key_types_number\
+				key_types_utils\
+				recognize_type_of_key\
+				calculate_up_right_rot\
+				defaults \
+				objs_struct \
+				objs_struct_free \
+				objs_struct_get \
+				calculate_matrix \
+				quadric_utils \
+				vector_utils \
+				transform_child_parent \
+				combine_child_parent \
+			)\
+			rt_parsing \
+			merge_scenes \
+		)\
+		$(addprefix printing/, \
+			print_scenes \
+			print_material \
+			print_objects \
+			print_objects2 \
+			print_vec \
+			print_transform \
+			print_data_type \
+		)\
+	))
 
 all: $(NAME)
 
-$(NAME): objs $(OBJS) $(HEADERS) 
+create_dir :
+	@mkdir -p objs/vulkan
+	@mkdir -p objs/core
+	@mkdir -p objs/json_parser
+	@mkdir -p objs/rt_parser
+	@mkdir -p objs/rt_parser/parser
+	@mkdir -p objs/rt_parser/handler
+	@mkdir -p objs/rt_parser/utils
+	@mkdir -p objs/rt_parser/utils/color_utils
+	@mkdir -p objs/rt_parser/config
+	@mkdir -p objs/rt_parser/config/extract
+	@mkdir -p objs/rt_parser/config/camera
+	@mkdir -p objs/rt_parser/config/object
+	@mkdir -p objs/rt_parser/config/object/types
+	@mkdir -p objs/printing
 
-	@printf "\033[92m\033[1:32mCompiling -------------> \033[91m$(NAME)\033[0m:\033[0m%-16s\033[32m[✔]\033[0m\n"
-	@make -C ./libs/libft 
+frameworks :
+	@$(VK_SDK_PATH)fragment $(SHADERS)/shader.frag -o $(VK_OBJS_PATH)frag.spv -Werror -O
+	@$(VK_SDK_PATH)vertex		$(SHADERS)/shader.vert -o $(VK_OBJS_PATH)vert.spv -Werror -O
+	@$(VK_SDK_PATH)compute	$(SHADERS)/shader.comp -o $(VK_OBJS_PATH)comp.spv -Werror -O
+	@make -C ./libs/libft
 	@make -C ./libs/libftg
 	@make -C ./libs/ft_printf
-	@gcc -o $(NAME) $(FLAGS) $(LIBS) $(LIBG) $(LIBGFLAGS) $(OBJS) $(INCLUDES)
+	@make -C ./libs/wgn2
 
-	
-objs/%.o: srcs/%.c
-	@printf  "\033[1:92mCompiling $(NAME)\033[0m %-31s\033[32m[$<]\033[0m\n" ""
-	@gcc -o $@ -c $< $(FLAGS) $(INCLUDES)
+$(NAME) : create_dir frameworks objs $(CPP_OBJS) $(C_OBJS) $(HEADERS)
+	@printf "\033[92m\033[1:32mCompiling -------------> \033[91m$(NAME)\033[0m:\033[0m%-16s\033[32m[✔]\033[0m\n"
+	@$(C++) -Wl,-search_paths_first -Wl,-headerpad_max_install_names $(C_OBJS) $(CPP_OBJS) -o $(NAME)			\
+		-Wl,-rpath, $(LIBS) $(DEBUG) $(FAST) $(FLAGS) -I $(CPP_HEADERS_DIR) -Werror -Wextra -Wall
+
+objs/%.o : c_src/%.c
+	@printf  "\033[1:92mCompiling $(NAME) c \033[0m %-31s\033[32m[$<]\033[0m\n" ""
+	@$(CC) -o $@ -c $< -g $(C_INCLUDES) $(DEBUG) $(FAST) $(FLAGS) -I $(CPP_HEADERS_DIR)
 	@printf "\033[A\033[2K"
 
-objs:
-	@mkdir -p objs/core/editor/init
-	@mkdir objs/core/editor/settings
-	@mkdir objs/core/editor/running
-	@mkdir objs/core/editor/quit
-	@mkdir -p objs/settings/verbose
-	@mkdir -p objs/args_parsing/verbose
-	@mkdir -p objs/init/verbose
-	@mkdir -p objs/parsing/verbose
-	@mkdir -p objs/parsing/rt_parsing
-	@mkdir -p objs/parsing/json_parser
-	@mkdir -p objs/tools/colors_handling
-	@mkdir -p objs/running/verbose
-#	@mkdir  objs/running/raytracing/stack
-	@mkdir -p objs/running/raytracing/malloc
-	@mkdir -p objs/running/raytracing/primitives/cone
-	@mkdir objs/running/raytracing/primitives/cylinder
-	@mkdir objs/running/raytracing/primitives/plane
-	@mkdir objs/running/raytracing/primitives/sphere
-	@mkdir objs/running/raytracing/primitives/quadric
-	@mkdir objs/running/raytracing/common
-	@mkdir -p objs/loop/verbose
-	@mkdir -p objs/printing/verbose
 
-
-clean:
-#	@	make -C ./libs/libft clean
-#	@	make -C ./libs/libftg clean
-#	@	make -C ./libs/ft_printf clean
+clean clean2:
 	@printf  "\033[1:32mCleaning object files -> \033[91m$(NAME)\033[0m\033[1:32m:\033[0m%-16s\033[32m[✔]\033[0m\n"
 	@rm -rf objs
 
-fclean: clean
+fclean : clean
+	@make fclean -C ./libs/libft
+	@make fclean -C ./libs/libftg
+	@make fclean -C ./libs/ft_printf
+	@make clean -C ./libs/wgn2
 	@printf  "\033[1:32mCleaning binary -------> \033[91m$(NAME)\033[0m\033[1:32m:\033[0m%-16s\033[32m[✔]\033[0m\n"
-	@	rm -f $(NAME)
-	@	rm -f $(MLX)
-#	@	make -C ./libs/libft fclean
-#	@	make -C ./libs/libftg fclean
-#	@	make -C ./libs/ft_printf fclean
+	@rm -f $(NAME)
 
-re:
-	@$(MAKE) fclean
-	@$(MAKE)
-#	@	make -C ./libs/libft re
-#	@	make -C ./libs/libftg re
-#	@	make -C ./libs/ft_printf re
+re : fclean all
+
+.PHONY: re clean fclean all debug fast flags

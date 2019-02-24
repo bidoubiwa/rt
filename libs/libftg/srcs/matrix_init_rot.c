@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_init_rot.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: toliver <toliver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 20:07:45 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/03 20:36:27 by toliver          ###   ########.fr       */
+/*   Updated: 2019/02/11 09:15:08 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ t_matrix		rotz_matrix_init(float degrees)
 	return (rotationmatrix);
 }
 
-t_matrix		matrix_axis_angle_get(t_vec axis, float cos, float sin, float t)
+t_matrix		matrix_axis_angle_get(t_vec3 axis, float cos, float sin,
+					float t)
 {
 	t_matrix	matrix;
 	float		tmp1;
@@ -91,17 +92,17 @@ t_matrix		matrix_axis_angle_get(t_vec axis, float cos, float sin, float t)
 	return (matrix);
 }
 
-t_matrix		rotmatrix_axis_angle(t_vec axis, float angle)
+t_matrix		rotmatrix_axis_angle(t_vec3 axis, float angle)
 {
 	float		cos;
 	float		sin;
 	float		t;
 	t_matrix	matrix;
 
-	if (angle == 0 || angle == NAN || vec_magnitude(axis) == 0)
+	if (angle == 0 || angle == NAN || vec3_magnitude(axis) == 0)
 		return (identity_matrix_init());
-	cos = cosf(angle);
-	sin = sinf(angle);
+	cos = cosf(degtorad(angle));
+	sin = sinf(degtorad(angle));
 	t = 1.0 - cos;
 	matrix = matrix_axis_angle_get(axis, cos, sin, t);
 	return (matrix);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: toliver <toliver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 12:09:17 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/03 19:57:19 by toliver          ###   ########.fr       */
+/*   Updated: 2019/02/11 08:59:10 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_get_next_line(const int fd, char **line);
 int					ft_tolower(int c);
+char				*ft_string_tolower(char *str);
 int					ft_toupper(int c);
 int					ft_isprint(int c);
 int					ft_isascii(int c);
@@ -106,4 +107,22 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 unsigned long		ft_atoi_base_ll(const char *val, unsigned int from);
 int					ft_strisvalidint(const char *str);
 void				ft_error(char *str);
+
+/*
+** DAMIAN LIBFT
+*/
+
+int					ft_string_to_int(const char *str);
+char				*ft_string_sub(char const *s, unsigned int start,
+						size_t len);
+char				**ft_string_split(char const *s, char c);
+int					ft_string_equals_n(char const *s1, char const *s2,
+						size_t n);
+int					ft_string_equals(char const *s1, char const *s2);
+char				*ft_string_new(size_t size);
+int					ft_string_compare(const char *s1, const char *s2);
+int					ft_string_compare_n(const char *s1, const char *s2,
+						size_t n);
+void				*ft_memory_alloc(size_t size);
+
 #endif

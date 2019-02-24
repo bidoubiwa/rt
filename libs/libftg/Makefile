@@ -3,27 +3,35 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: toliver <toliver@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/12 01:24:53 by toliver           #+#    #+#              #
-#    Updated: 2019/01/14 16:36:21 by cvermand         ###   ########.fr        #
+#    Updated: 2019/02/11 09:48:48 by toliver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftg.a
 
-FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -Ofast -g3
 
-FILES = definition\
-		vec\
+FILES = def_vec_3\
+		def_vec_4\
+		utils_vec3\
+		utils_vec4\
 		matrix_func\
 		matrix_init\
 		matrix_init_rot\
-		operations\
-		operations1\
+		mat4_init\
+		mat4_init_rot\
+		operations_vec3\
+		operations_vec4\
+		operations_ext_vec3\
+		operations_ext_vec4\
 		tools\
 		utility\
-		vec_norm	
+		vec3_norm \
+		vec4_norm \
+		qeuler \
 
 INCLUDES = -I./includes
 

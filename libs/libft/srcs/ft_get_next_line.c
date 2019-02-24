@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: toliver <toliver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 00:43:10 by toliver           #+#    #+#             */
-/*   Updated: 2019/01/09 17:57:54 by toliver          ###   ########.fr       */
+/*   Updated: 2019/02/11 08:33:25 by toliver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,40 @@ static int			split_and_return(t_lst *lst, char **line)
 	return (1);
 }
 
+void				gnl_delete_node(t_lst **lst, t_lst *node)
+{
+	t_lst			*ptr;
+
+	if ((*lst) == node)
+		(*lst) = node->next;
+	else
+	{
+		ptr = (*lst);
+		while (ptr->next != node)
+			ptr = ptr->next;
+		ptr->next = node->next;
+	}
+	free(node->str);
+	free(node);
+}
+
 int					ft_get_next_line(const int fd, char **line)
 {
 	static t_lst	*lst = NULL;
 	t_lst			*ptr;
+	int				retval;
 
 	if (fd < 0 || !(ptr = get_elem(&lst, fd)))
 		return (-1);
 	if (ptr->str == NULL)
+	{
+		gnl_delete_node(&lst, ptr);
 		return (0);
+	}
 	if (!ft_strchr(ptr->str, '\n') && !elem_fill(ptr, fd))
 		return (-1);
-	return (split_and_return(ptr, line));
+	retval = split_and_return(ptr, line);
+	if (retval == 0)
+		gnl_delete_node(&lst, ptr);
+	return (retval);
 }

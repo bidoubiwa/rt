@@ -6,13 +6,13 @@
 #    By: toliver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/12 01:24:53 by toliver           #+#    #+#              #
-#    Updated: 2019/01/14 16:36:10 by cvermand         ###   ########.fr        #
+#    Updated: 2019/01/29 12:41:54 by cvermand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror -Ofast -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -Ofast
 
 FILES = atoi \
 	   atof \
@@ -70,6 +70,7 @@ FILES = atoi \
 	   strsub \
 	   strtrim \
 	   tolower \
+	   string_tolower\
 	   toupper \
 	   lstnew\
 	   lstdelone \
@@ -82,6 +83,15 @@ FILES = atoi \
 	   atoi_base_ll \
 	   atoi_base \
 	   error \
+	   string_to_int\
+	   string_sub\
+	   string_split\
+	   string_equals_n\
+	   string_equals\
+	   string_new\
+	   string_compare\
+	   string_compare_n\
+	   memory_alloc\
 
 INCLUDES = -I./includes
 
